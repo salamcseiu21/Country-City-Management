@@ -26,6 +26,9 @@
 
                 <br />
                 <br />
+               
+               
+                     
                 <asp:GridView ID="showCuntryInformationGridView" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True" OnPageIndexChanging="showCuntryInformationGridView_PageIndexChanging" PageSize="3" EnableViewState="False">
 
                     <AlternatingRowStyle BackColor="White" />
@@ -66,8 +69,9 @@
                         </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
-
-            </fieldset>
+                   </fieldset> 
+                   
+            
         <asp:HyperLink ID="goToIdexPageHyperLink" runat="server" NavigateUrl="~/UI/Home.aspx">Back</asp:HyperLink>
     </form>
     <footer>

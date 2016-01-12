@@ -20,8 +20,8 @@
                 <legend>Search Criteria</legend>
                 <div style="float: left;">
                     <asp:RadioButtonList ID="serarchKeyRadioButton" runat="server">
-                        <asp:ListItem>City Name</asp:ListItem>
-                        <asp:ListItem>Country</asp:ListItem>
+                        <asp:ListItem Value="1">City Name</asp:ListItem>
+                        <asp:ListItem Value="2">Country</asp:ListItem>
                     </asp:RadioButtonList>
                 </div>
                 <div>
@@ -42,6 +42,10 @@
         </div>
 
         <div>
+            <asp:UpdatePanel runat="server">
+                <ContentTemplate>
+                    
+            
 
             <asp:GridView runat="server" ID="cityInformationGridView" AutoGenerateColumns="False" AllowPaging="True" PageSize="2" OnPageIndexChanging="cityInformationGridView_PageIndexChanging" Caption="City Information">
                 <Columns>
@@ -87,6 +91,8 @@
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
+                        </ContentTemplate>
+            </asp:UpdatePanel>
         </div>
         <asp:HyperLink ID="goToIdexPageHyperLink" runat="server" NavigateUrl="~/UI/Home.aspx">Back</asp:HyperLink>
 

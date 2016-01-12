@@ -61,7 +61,7 @@ namespace CountryCityInformationManagementSystem.UI
         private void ClearAll()
         {
             nameTextBox.Text = "";
-           // Request.Form["edit"] = "";
+            edit.InnerText = "";
         }
 
         protected void Timer1_Tick(object sender, EventArgs e)
@@ -86,7 +86,7 @@ namespace CountryCityInformationManagementSystem.UI
 
         protected void cancelButton_Click(object sender, EventArgs e)
         {
-            ClearAll();
+            Response.Redirect("Home.aspx");
         }
 
     }

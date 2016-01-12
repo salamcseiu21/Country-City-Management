@@ -15,8 +15,9 @@ namespace CountryCityInformationManagementSystem.UI
             if (!IsPostBack)
             {
                 SetImageUrl();
+                LoadCountryInformation();
             }
-            LoadCountryInformation();
+            
         }
 
         private void LoadCountryInformation()
@@ -29,8 +30,7 @@ namespace CountryCityInformationManagementSystem.UI
 
         protected void searchButton_Click(object sender, EventArgs e)
         {
-            string name = searchTextBox.Text;
-           
+            string name = searchTextBox.Text;  
             countryList = cityManager.GetCountryInformationByName(name);
             showCuntryInformationGridView.DataSource = countryList;
             showCuntryInformationGridView.DataBind();
@@ -39,7 +39,8 @@ namespace CountryCityInformationManagementSystem.UI
         protected void showCuntryInformationGridView_PageIndexChanging(object sender, System.Web.UI.WebControls.GridViewPageEventArgs e)
         {
             showCuntryInformationGridView.PageIndex = e.NewPageIndex;
-            showCuntryInformationGridView.DataSource = countryList;
+            string name = searchTextBox.Text;
+            showCuntryInformationGridView.DataSource = cityManager.GetCountryInformationByName(name);
             showCuntryInformationGridView.DataBind();
         }
         protected void Timer1_Tick(object sender, EventArgs e)

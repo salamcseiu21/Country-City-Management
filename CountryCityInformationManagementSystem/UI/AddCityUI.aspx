@@ -103,7 +103,7 @@
                         <td>
                             <asp:DropDownList runat="server" ID="countryDropDownList" Width="172px" />
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button runat="server" ID="Button1" Text="Save" OnClick="saveButton_Click" />
-                            <asp:Button runat="server" ID="Button2" Text="Cancel" OnClick="CancelButton_Click" />
+                            <asp:Button runat="server" ID="Button2" Text="Cancel" OnClick="CancelButton_Click" CausesValidation="False"/>
                         </td>
                     </tr>
                     <tr>
@@ -181,7 +181,10 @@
         <script src="../froala_editor_2.0.5/js/plugins/paragraph_style.min.js"></script>
         <script>
             $(function () {
-                $('#edit').froalaEditor();
+                $('#edit').froalaEditor({
+                    heightMin: 100,
+                    heightMax: 200
+                });
             });
         </script>
         <footer>

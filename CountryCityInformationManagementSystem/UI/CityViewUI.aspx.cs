@@ -19,9 +19,7 @@ namespace CountryCityInformationManagementSystem.UI
                 SetImageUrl();
                 LoadAllCityInformation(); 
             }
-            LoadAllCityInformation(); 
-            //cityInformationGridView.DataSource = cityViewerModels;
-            //cityInformationGridView.DataBind();
+           
         }
 
         private void LoadAllCountry()
@@ -44,43 +42,72 @@ namespace CountryCityInformationManagementSystem.UI
 
         protected void searchButton_Click(object sender, EventArgs e)
         {
-            cityViewerModels = new List<CityViewerModel>();
-            foreach (ListItem item in serarchKeyRadioButton.Items)
+
+            if (serarchKeyRadioButton.SelectedValue == "1")
             {
-                if (item.Selected)
-                {
-                    if (item.Value == "City Name")
-                    {
-                        string cityName = cityNameTextBox.Text;
-                        cityViewerModels.Clear();
-                        cityViewerModels = cityManager.GetCityInformation(cityName);
-                       //// ViewState["cityList"] = cityViewerModels;
-                       //// Session["countryList"] = cityViewerModels;
-                        cityInformationGridView.DataSource = cityViewerModels;
-                        cityInformationGridView.DataBind();
-                    }
-                    else if (item.Value == "Country")
-                    {
-                        string countryName = countryDropDownList.SelectedItem.Text;
-                        cityViewerModels.Clear();
-                        cityViewerModels = cityManager.GetCityInformationByCountryName(countryName);
-                         //Session["countryList"] = cityViewerModels;
-                        //// ViewState["cityList"] = cityViewerModels;
-                        cityInformationGridView.DataSource = cityViewerModels;
-                        cityInformationGridView.DataBind();
-                    }
-                }
+                string cityName = cityNameTextBox.Text;
+                cityInformationGridView.DataSource = cityManager.GetCityInformation(cityName);
+                cityInformationGridView.DataBind(); 
             }
+            else if(serarchKeyRadioButton.SelectedValue=="2")
+            {
+                string countryName = countryDropDownList.SelectedItem.Text;
+                cityInformationGridView.DataSource = cityManager.GetCityInformationByCountryName(countryName);
+                cityInformationGridView.DataBind();
+            }
+
+            //cityViewerModels = new List<CityViewerModel>();
+            //foreach (ListItem item in serarchKeyRadioButton.Items)
+            //{
+            //    if (item.Selected)
+            //    {
+            //        if (item.Value == "City Name")
+            //        {
+            //            string cityName = cityNameTextBox.Text;
+            //            cityViewerModels.Clear();
+            //            cityViewerModels = cityManager.GetCityInformation(cityName);
+            //           //// ViewState["cityList"] = cityViewerModels;
+            //           //// Session["countryList"] = cityViewerModels;
+            //            cityInformationGridView.DataSource = cityViewerModels;
+            //            cityInformationGridView.DataBind();
+            //        }
+            //        else if (item.Value == "Country")
+            //        {
+            //            string countryName = countryDropDownList.SelectedItem.Text;
+            //            cityViewerModels.Clear();
+            //            cityViewerModels = cityManager.GetCityInformationByCountryName(countryName);
+            //             //Session["countryList"] = cityViewerModels;
+            //            //// ViewState["cityList"] = cityViewerModels;
+            //            cityInformationGridView.DataSource = cityViewerModels;
+            //            cityInformationGridView.DataBind();
+            //        }
+            //    }
+            //}
         }
 
       
         protected void cityInformationGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            cityInformationGridView.PageIndex = e.NewPageIndex;
-            //Session["countryList"] = cityViewerModels;
-            cityInformationGridView.DataSource = cityViewerModels;
-            cityInformationGridView.DataBind();
-            //ViewState["cityList"] = cityViewerModels;
+            if (serarchKeyRadioButton.SelectedValue == "1")
+            {
+                cityInformationGridView.PageIndex = e.NewPageIndex;
+                string cityName = cityNameTextBox.Text;
+                cityInformationGridView.DataSource = cityManager.GetCityInformation(cityName);
+                cityInformationGridView.DataBind(); 
+            }
+            else if (serarchKeyRadioButton.SelectedValue=="2")
+            {
+                cityInformationGridView.PageIndex = e.NewPageIndex;
+                string countryName = countryDropDownList.SelectedItem.Text;
+                cityInformationGridView.DataSource = cityManager.GetCityInformationByCountryName(countryName);
+                cityInformationGridView.DataBind();  
+            }
+            else
+            {
+                cityInformationGridView.PageIndex = e.NewPageIndex;
+            LoadAllCityInformation();
+            }
+           
         }
 
         protected void Timer1_Tick(object sender, EventArgs e)

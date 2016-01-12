@@ -55,7 +55,7 @@
                         <td></td>
                         <td>
                             <asp:Button ID="saveButton" runat="server" Text="Save" OnClick="saveButton_Click" Style="height: 26px" />
-                            <asp:Button ID="cancelButton" runat="server" Text="Cancel" OnClick="cancelButton_Click" />
+                            <asp:Button ID="cancelButton" runat="server" Text="Cancel" OnClick="cancelButton_Click" CausesValidation="False" />
                         </td>
                     </tr>
                     <tr>
@@ -117,7 +117,10 @@
 
         <script>
             $(function () {
-                $('#edit').froalaEditor();
+                $('#edit').froalaEditor({
+                    heightMin: 100,
+                    heightMax: 200
+                });
             });
         </script>
         <footer>

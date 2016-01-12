@@ -70,6 +70,7 @@ namespace CountryCityInformationManagementSystem.UI
             noOfDwellersTextBox.Text = string.Empty;
             locationTextBox.Text = string.Empty;
             weatherTextBox.Text = string.Empty;
+            edit.InnerText = "";
         }
 
 
@@ -86,7 +87,7 @@ namespace CountryCityInformationManagementSystem.UI
 
         protected void CancelButton_Click(object sender, EventArgs e)
         {
-            ClearAllTextBoxes();
+            Response.Redirect("Home.aspx");
         }
 
         protected void Timer1_Tick(object sender, EventArgs e)
