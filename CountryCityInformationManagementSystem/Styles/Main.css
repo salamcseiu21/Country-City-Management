@@ -1,0 +1,67 @@
+﻿
+.container {
+    width: 960px;
+    margin: 20px auto;
+    border: 1px solid salmon;
+}
+
+header {
+    height:250px;
+    float: left;
+}
+.logo {
+    float: left;
+    height: 250px;
+    width: 250px;
+
+}
+.logo img {
+    height: 248px;
+    width: 248px;
+    border: 1px solid red;
+}
+.banner {
+    width: 710px;
+    float: left;
+     height: 250px;
+    background-image: url(/Images/lily.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+   
+}
+
+.mainContent {
+    width: 960px;
+    border-top: 2px solid salmon;
+}
+aside {
+    width:230px;
+    float: left;
+    background-color: #ededed;
+    padding: 10px;
+    height: 400px;
+    text-decoration: none;
+    
+}
+aside a {
+    text-transform: uppercase;
+    list-style: none;
+}
+.content {
+    width: 670px;
+    float: left;
+    background-color: white;
+    padding: 10px;
+    height: 400px;
+}
+footer {
+    position: relative;
+    text-align: center;
+    background-color: mediumturquoise;
+    height: 30px;
+    clear: both;
+}
+h2 {
+    border-bottom: 2px solid darkblue;
+}

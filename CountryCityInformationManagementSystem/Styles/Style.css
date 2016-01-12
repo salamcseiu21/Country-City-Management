@@ -1,0 +1,47 @@
+﻿body {
+    background-image: url(../Images/backgroundImage.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.countryEntryPage {
+    width: 940px;
+    margin: 20px auto;
+    border: 1px solid fuchsia;
+}
+
+#cityEntryPage {
+    width: 940px;
+    margin: 20px auto;
+    border: 1px solid fuchsia;
+}
+
+table {
+    width: 100%;
+    margin: 20px auto;
+}
+
+#searchSection {
+    margin-left: 100px;
+}
+
+#cityViewPage {
+    width: 940px;
+    margin: 20px auto;
+    border: 1px solid fuchsia;
+}
+
+#countryViewPage {
+    width: 940px;
+    margin: 20px auto;
+    border: 1px solid fuchsia;
+}
+
+footer {
+    position: relative;
+    size: auto;
+    text-align: center;
+    background-color: mediumturquoise;
+    height: 30px;
+}
